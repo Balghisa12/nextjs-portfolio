@@ -166,7 +166,7 @@ const AboutSection = () => {
 
             Collaboration is at the core of my work ethos, and I thrive in team environments where diverse perspectives fuel creativity and drive results. I am eager to join forces with fellow developers, designers, and stakeholders to bring captivating applications to life.
 
-            Let's build something remarkable together.
+            Let&apos;s build something remarkable together.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

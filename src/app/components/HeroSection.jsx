@@ -29,8 +29,6 @@ const HeroSection = () => {
                 1000,
                 "Data Engineer",
                 1000,
-                "UI/UX Designer",
-                1000,
                 "Musician",
                 1000,
               ]}

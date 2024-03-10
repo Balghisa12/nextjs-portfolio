@@ -44,7 +44,7 @@ const CreativitySection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 mt-8 md:mb-12">
         Creativity
       </h2>
       <iframe style={{"border-radius":"12px"}} src="https://open.spotify.com/embed/artist/5R9YQMvbTgXDgShTNd201n?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

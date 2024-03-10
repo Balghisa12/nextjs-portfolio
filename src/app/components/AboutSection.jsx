@@ -13,6 +13,7 @@ import NodeLogo from "../../../public/nodejs-icon.svg"
 import MySqlLogo from "../../../public/mysql-6.svg"
 import MongoDbLogo from "../../../public/mongodb-icon-1.svg"
 import Typescript from "../../../public/typescript.svg"
+import GolangLogo from "../../../public/golang-1.svg"
 
 
 
@@ -62,6 +63,10 @@ const TAB_DATA = [
         <div className="bg-gray-1000 p-4 flex flex-col items-center justify-center">
           <Image src={MongoDbLogo} alt="Image 2" className="w-24 h-24 mb-2" />
           <h2 class="text-lg font-bold">MongoDB</h2>
+        </div>
+        <div className="bg-gray-1000 p-4 flex flex-col items-center justify-center">
+          <Image src={GolangLogo} alt="Image 2" className="w-24 h-24 mb-2" />
+          <h2 class="text-lg font-bold">Go</h2>
         </div>
       </div>
       <h2 className="text-center text-3xl font-extrabold mb-5">Data</h2>

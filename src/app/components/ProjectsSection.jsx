@@ -14,6 +14,14 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "Zkorum",
+    description: "Zero proof knowledge social network",
+    image: "/images/projects/zkorum.jpeg",
+    tag: ["All", "Web"],
+    previewUrl: "https://zkorum.com/",
+  },
+  {
+    id: 3,
     title: "La Terrasse de Sophie",
     description: "French Hostel Website",
     image: "/images/projects/terrasse.png",

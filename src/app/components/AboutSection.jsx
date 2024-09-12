@@ -144,7 +144,7 @@ const TAB_DATA = [
         <li className="w-full float-left relative pl-[20px] pb-[45px]">
           <div className="list_inner w-full h-auto clear-both flex relative">
             <div className="time w-1/2 pr-[20px]">
-              <span className="inline-block py-[5px] px-[25px] bg-gradient-to-br from-primary-500 to-secondary-500 rounded-[50px] text-[14px] whitespace-nowrap">2022 - </span>
+              <span className="inline-block py-[5px] px-[25px] bg-gradient-to-br from-primary-500 to-secondary-500 rounded-[50px] text-[14px] whitespace-nowrap">2022 - Present </span>
             </div>
             <div className="place w-1/2 pl-[20px]">
               <h3 className="text-[16px] mb-[2px] font-semibold">Zaack</h3>

@@ -20,7 +20,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
 	const audioRef = useRef<HTMLAudioElement | null>(null);
 
 	React.useEffect(() => {
-		audioRef.current = new Audio("../assets/gunna.mp3"); // This will be replaced with actual file
+		audioRef.current = new Audio("/src/assets/gunna.mp3");
 		audioRef.current.volume = volume;
 
 		const audio = audioRef.current;

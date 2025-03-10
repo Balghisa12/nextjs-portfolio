@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useRef, useState } from "react";
-
+import Gunna from "@/assets/gunna.mp3";
 interface AudioContextType {
 	isPlaying: boolean;
 	currentTime: number;
@@ -20,7 +20,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
 	const audioRef = useRef<HTMLAudioElement | null>(null);
 
 	React.useEffect(() => {
-		audioRef.current = new Audio("/src/assets/gunna.mp3");
+		audioRef.current = new Audio(Gunna);
 		audioRef.current.volume = volume;
 
 		const audio = audioRef.current;

@@ -1,39 +1,45 @@
 import { AlbumCard } from "@/components/album-card";
 import { Play, Pause } from "lucide-react";
 import { useAudio } from "@/contexts/AudioContext";
-import Picture from "../assets/hazim.jpeg";
+import Picture from "@/assets/hazim.jpeg";
+import H from "@/components/images/H";
+import A from "@/components/images/A";
+import Z from "@/components/images/Z";
+import I from "@/components/images/I";
+import M from "@/components/images/M";
+
 const albums = [
 	{
 		title: "Experience",
 		description:
 			"My professional journey and work experience in software development",
-		image: "https://images.unsplash.com/photo-1516387938699-a93567ec168e",
+		image: <H />,
 		href: "/experience",
 	},
 	{
 		title: "Skills",
 		description:
 			"Technical expertise and competencies in modern web technologies",
-		image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+		image: <A />,
 		href: "/skills",
 	},
 	{
 		title: "Projects",
 		description:
 			"Featured projects showcasing my technical abilities and creativity",
-		image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d",
+		image: <Z />,
 		href: "/projects",
 	},
 	{
 		title: "Education",
 		description: "Academic background and continuous learning journey",
-		image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+		image: <I />,
 		href: "/education",
 	},
 	{
 		title: "Contact",
 		description: "Connect with me for opportunities and collaborations",
-		image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa",
+		image: <M />,
 		href: "/contact",
 	},
 ];
@@ -69,6 +75,7 @@ export function HomePage() {
 			<div className="p-4 md:p-6">
 				<div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 mb-8">
 					<button
+						type="button"
 						onClick={togglePlay}
 						className="h-14 w-14 md:h-16 md:w-16 rounded-full bg-green-500 hover:bg-green-400 transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center"
 					>

@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useRef, useState } from "react";
+import React, {
+	createContext,
+	useContext,
+	useMemo,
+	useRef,
+	useState,
+} from "react";
 import Gunna from "@/assets/gunna.mp3";
 interface AudioContextType {
 	isPlaying: boolean;
@@ -12,7 +18,9 @@ interface AudioContextType {
 
 const AudioContext = createContext<AudioContextType | null>(null);
 
-export function AudioProvider({ children }: { children: React.ReactNode }) {
+export function AudioProvider({
+	children,
+}: Readonly<{ children: React.ReactNode }>) {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [currentTime, setCurrentTime] = useState(0);
 	const [duration, setDuration] = useState(0);
@@ -66,6 +74,18 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
 		audioRef.current.currentTime = (time / 100) * duration;
 	};
 
+	const audioMemo = useMemo(
+		() => ({
+			isPlaying,
+			currentTime,
+			duration,
+			volume,
+			togglePlay,
+			setVolume: handleVolumeChange,
+			seekTo,
+		}),
+		[],
+	);
 	return (
 		<AudioContext.Provider
 			value={{

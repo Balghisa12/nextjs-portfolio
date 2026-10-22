@@ -3,7 +3,7 @@ import { ProfileHero } from "@/components/profile-hero";
 import { ProjectCard } from "@/components/project-card";
 import { ExperienceList } from "@/components/experience-list";
 import { ContactLinks } from "@/components/contact-links";
-import { featuredProjects } from "@/content/projects";
+import { projects } from "@/content/projects";
 import { experience } from "@/content/experience";
 import { decisions } from "@/content/decisions";
 import { profile } from "@/content/profile";
@@ -35,9 +35,9 @@ export function HomePage() {
 			<ProfileHero />
 			<div className="space-y-14 px-4 pb-14 md:px-6 lg:px-8">
 				<section aria-labelledby="work">
-					<SectionHeading id="work" title={t(ui.home.featured)} action={{ to: "/projects", label: t(ui.home.showAll) }} />
-					<div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-						{featuredProjects.map((project) => (
+					<SectionHeading id="work" title={t(ui.home.featured)} />
+					<div className="grid max-w-3xl gap-4 sm:grid-cols-2">
+						{projects.map((project) => (
 							<ProjectCard key={project.slug} project={project} />
 						))}
 					</div>

@@ -4,17 +4,11 @@ import wikisseyHome720 from "@/assets/projects/wikissey-home-720.webp";
 import wikisseyHome1440 from "@/assets/projects/wikissey-home-1440.webp";
 import wikisseyRules720 from "@/assets/projects/wikissey-rules-720.webp";
 import wikisseyRules1440 from "@/assets/projects/wikissey-rules-1440.webp";
-import prCover from "@/assets/projects/pr-walkthrough-cover.webp";
-import prDemo720 from "@/assets/projects/pr-walkthrough-demo-720.webp";
-import prDemo1440 from "@/assets/projects/pr-walkthrough-demo-1440.webp";
 import reactorCover from "@/assets/projects/reactor-cover.webp";
 import reactorBoard720 from "@/assets/projects/reactor-shift-board-720.webp";
 import reactorBoard1440 from "@/assets/projects/reactor-shift-board-1440.webp";
 import reactorRoom720 from "@/assets/projects/reactor-control-room-720.webp";
 import reactorRoom1440 from "@/assets/projects/reactor-control-room-1440.webp";
-import chaletCover from "@/assets/projects/chalet-cover.webp";
-import chaletHome720 from "@/assets/projects/chalet-home-720.webp";
-import chaletHome1440 from "@/assets/projects/chalet-home-1440.webp";
 
 export interface Screenshot {
 	small: string;
@@ -39,7 +33,6 @@ export interface Project {
 	/** Hero wash colour, taken from the product's own palette. */
 	accent: string;
 	cover: string;
-	featured: boolean;
 	links: { label: L; href: string }[];
 	problem: L[];
 	myRole: L;
@@ -80,7 +73,6 @@ export const projects: Project[] = [
 		stack: ["React", "TypeScript", "Go", "Nakama", "WebSockets", "PostgreSQL", "Redis"],
 		accent: "#6E5A17",
 		cover: wikisseyCover,
-		featured: true,
 		links: [{ label: { en: "Play Wikissey", fr: "Jouer à Wikissey" }, href: "https://www.wikissey.com" }],
 		problem: [
 			{
@@ -207,133 +199,6 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		slug: "pr-walkthrough",
-		name: "PR Walkthrough",
-		tagline: {
-			en: "Grounded, visual code review for large pull requests.",
-			fr: "Une revue de code visuelle et fondée sur le code, pour les grosses pull requests.",
-		},
-		role: { en: "Author", fr: "Auteur" },
-		status: { en: "Open source (MIT)", fr: "Open source (MIT)" },
-		stack: ["TypeScript", "ts-morph", "React", "Vite", "MCP"],
-		accent: "#2F4A7A",
-		cover: prCover,
-		featured: true,
-		links: [sourceLink("pr-story")],
-		problem: [
-			{
-				en: "A large pull request is hard to review from a flat diff, and AI review that only reads the diff can describe effects that aren’t there.",
-				fr: "Une grosse pull request est difficile à relire depuis un diff à plat, et une revue IA qui ne lit que le diff peut décrire des effets qui n’existent pas.",
-			},
-			{
-				en: "PR Walkthrough separates what can be proven from the code from what needs judgment, then presents the change as a short, chaptered story with clickable evidence.",
-				fr: "PR Walkthrough sépare ce qui se prouve à partir du code de ce qui relève du jugement, puis présente le changement comme un court récit en chapitres, avec des preuves cliquables.",
-			},
-		],
-		myRole: {
-			en: "Author of the public repository: the analyzer, the narration contract, the walkthrough interface and the Claude Code plugin packaging.",
-			fr: "Auteur du dépôt public : l’analyseur, le contrat de narration, l’interface de lecture et le packaging en plugin Claude Code.",
-		},
-		flow: {
-			heading: { en: "How a review runs", fr: "Déroulé d’une revue" },
-			steps: [
-				{
-					title: { en: "Analyze", fr: "Analyser" },
-					body: {
-						en: "A ts-morph pass resolves the real type graph: change units, a causal graph (a signature change and the call sites it forces), the blast radius, and findings with file:line evidence.",
-						fr: "Une passe ts-morph résout le vrai graphe de types : unités de changement, graphe causal (un changement de signature et les appels qu’il impose), rayon d’impact, et constats avec preuve fichier:ligne.",
-					},
-				},
-				{
-					title: { en: "Narrate", fr: "Raconter" },
-					body: {
-						en: "The reviewer’s own Claude session writes the why of each change and groups changes by intent into 3 to 7 chapters.",
-						fr: "La session Claude du relecteur rédige le pourquoi de chaque changement et regroupe les changements par intention en 3 à 7 chapitres.",
-					},
-				},
-				{
-					title: { en: "Validate", fr: "Valider" },
-					body: {
-						en: "The narration is merged against a locked JSON Schema. The model can explain a finding but cannot invent, drop or downgrade one.",
-						fr: "La narration est fusionnée selon un JSON Schema verrouillé. Le modèle peut expliquer un constat, mais pas en inventer, en supprimer ni en minimiser un.",
-					},
-				},
-				{
-					title: { en: "Read", fr: "Lire" },
-					body: {
-						en: "A local web app shows the overview, the chapter spine, the diff with touched lines highlighted, and the explanation with the impacted files.",
-						fr: "Une application web locale affiche la synthèse, le sommaire des chapitres, le diff avec les lignes touchées en évidence, et l’explication avec les fichiers impactés.",
-					},
-				},
-			],
-		},
-		screens: [
-			shot(
-				prDemo720,
-				prDemo1440,
-				{
-					en: "PR Walkthrough interface: an overview of a sample pull request, a chapter list on the left, the diff in the middle and the explanation with a breaking-change badge on the right.",
-					fr: "Interface de PR Walkthrough : synthèse d’une pull request d’exemple, liste des chapitres à gauche, diff au centre et explication avec un badge de rupture d’API à droite.",
-				},
-				{
-					en: "The walkthrough on the repository’s built-in sample data (an example idempotent-checkout pull request).",
-					fr: "La revue sur les données d’exemple fournies avec le dépôt (une pull request fictive sur un paiement idempotent).",
-				},
-			),
-		],
-		architecture: [
-			{
-				en: "Analyzer: deterministic Node scripts that emit a changeset conforming to a locked JSON Schema.",
-				fr: "Analyseur : scripts Node déterministes qui produisent un changeset conforme à un JSON Schema verrouillé.",
-			},
-			{
-				en: "MCP server: exposes analyze_pr and get_blast_radius to Claude; posting a review is dry-run only.",
-				fr: "Serveur MCP : expose analyze_pr et get_blast_radius à Claude ; la publication d’une revue reste en mode simulation.",
-			},
-			{
-				en: "Interface: React and Vite, served locally next to the changeset.",
-				fr: "Interface : React et Vite, servie en local avec le changeset.",
-			},
-		],
-		decisions: [
-			{
-				title: { en: "Facts and narration are separate layers", fr: "Faits et narration sont deux couches distinctes" },
-				body: {
-					en: "Contract changes, stale callers, side effects and coverage gaps come from static analysis. The model only explains them, and the merge step locks the facts so an explanation can’t contradict them.",
-					fr: "Les changements de contrat, appels obsolètes, effets de bord et trous de couverture viennent de l’analyse statique. Le modèle ne fait que les expliquer, et l’étape de fusion verrouille les faits pour qu’aucune explication ne les contredise.",
-				},
-			},
-			{
-				title: { en: "Chapters by intent, causes kept together", fr: "Chapitres par intention, causes regroupées" },
-				body: {
-					en: "Changes are grouped by what they are for, and a cause is never split from the call sites it forces, so a 40-file pull request reads as a handful of chapters.",
-					fr: "Les changements sont regroupés selon leur but, et une cause n’est jamais séparée des appels qu’elle impose : une pull request de 40 fichiers se lit en quelques chapitres.",
-				},
-			},
-		],
-		shipped: [
-			{ en: "Claude Code plugin with marketplace install", fr: "Plugin Claude Code installable depuis une marketplace" },
-			{ en: "CLI to analyze, merge narration and serve a walkthrough", fr: "CLI pour analyser, fusionner la narration et servir la revue" },
-			{ en: "Static demo build with sample data", fr: "Démo statique avec données d’exemple" },
-		],
-		constraints: [
-			{
-				en: "TypeScript and JavaScript repositories with a tsconfig.json; other files are skipped.",
-				fr: "Dépôts TypeScript et JavaScript avec un tsconfig.json ; les autres fichiers sont ignorés.",
-			},
-			{
-				en: "The analysis needs a full checkout with its dependencies, not just a diff.",
-				fr: "L’analyse a besoin du dépôt complet avec ses dépendances, pas seulement d’un diff.",
-			},
-		],
-		evidence: [
-			{
-				en: "162 automated tests (Vitest), all passing when run on 22 October 2026.",
-				fr: "162 tests automatisés (Vitest), tous au vert lors d’une exécution le 22 octobre 2026.",
-			},
-		],
-	},
-	{
 		slug: "reactor-simulator",
 		name: "Reactor Simulator",
 		tagline: {
@@ -345,7 +210,6 @@ export const projects: Project[] = [
 		stack: ["TypeScript", "React", "Vite", "Vitest"],
 		accent: "#5E3F17",
 		cover: reactorCover,
-		featured: true,
 		links: [sourceLink("nuclear-fission-game")],
 		problem: [
 			{
@@ -482,53 +346,7 @@ export const projects: Project[] = [
 			},
 		],
 	},
-	{
-		slug: "chalet-la-llyre",
-		name: "Chalet La Llyre",
-		tagline: {
-			en: "A bilingual website for a mountain chalet rental.",
-			fr: "Un site bilingue pour la location d’un chalet de montagne.",
-		},
-		role: { en: "Developer", fr: "Développeur" },
-		status: { en: "Live", fr: "En ligne" },
-		stack: ["Astro", "TypeScript"],
-		accent: "#35506B",
-		cover: chaletCover,
-		featured: false,
-		links: [
-			{ label: { en: "Visit the site", fr: "Voir le site" }, href: "https://lallyre.vercel.app" },
-			sourceLink("pr"),
-		],
-		problem: [
-			{
-				en: "A property website in French and English with a photo gallery, amenities, pricing, and a contact and booking section.",
-				fr: "Un site de location en français et en anglais avec galerie photo, équipements, tarifs, et une section contact et réservation.",
-			},
-		],
-		myRole: {
-			en: "Built the site with Astro.",
-			fr: "Développement du site avec Astro.",
-		},
-		screens: [
-			shot(
-				chaletHome720,
-				chaletHome1440,
-				{
-					en: "Chalet La Llyre home page: a snowy mountain chalet photo with the site title and a Book your stay button.",
-					fr: "Accueil du site Chalet La Llyre : photo d’un chalet enneigé avec le titre du site et un bouton de réservation.",
-				},
-				{ en: "The home page, captured 22 October 2026.", fr: "La page d’accueil, capturée le 22 octobre 2026." },
-			),
-		],
-		architecture: [],
-		decisions: [],
-		shipped: [],
-		constraints: [],
-		evidence: [],
-	},
 ];
-
-export const featuredProjects = projects.filter((p) => p.featured);
 
 export function findProject(slug: string | undefined): Project | undefined {
 	return projects.find((p) => p.slug === slug);

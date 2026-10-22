@@ -14,7 +14,7 @@ export interface Role {
 	stack: string[];
 }
 
-// Facts, dates and wording follow the CV. The Zaack/STUF overlap is as supplied.
+// Facts, dates and wording follow the CV. STUF was a side mission during the Zaack years (owner, 22 Oct 2026).
 export const experience: Role[] = [
 	{
 		id: "korint",
@@ -79,7 +79,7 @@ export const experience: Role[] = [
 		id: "stuf",
 		company: "STUF",
 		role: { en: "Full-stack developer", fr: "Développeur full-stack" },
-		context: { en: "Gaming SaaS", fr: "SaaS gaming" },
+		context: { en: "Gaming SaaS · side mission alongside Zaack", fr: "SaaS gaming · mission parallèle à Zaack" },
 		period: { en: "Jan – May 2023", fr: "janv. – mai 2023" },
 		highlights: [
 			{

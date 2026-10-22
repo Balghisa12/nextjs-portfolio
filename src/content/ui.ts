@@ -26,7 +26,6 @@ export const ui = {
 	home: {
 		explore: { en: "Explore my work", fr: "Voir mes projets" },
 		featured: { en: "Featured work", fr: "Projets phares" },
-		showAll: { en: "Show all projects", fr: "Voir tous les projets" },
 		decisions: { en: "Selected engineering decisions", fr: "Quelques décisions d’ingénierie" },
 		career: { en: "Career", fr: "Parcours" },
 		fullTimeline: { en: "See the full timeline", fr: "Voir tout le parcours" },
@@ -41,11 +40,9 @@ export const ui = {
 	projects: {
 		title: { en: "Projects", fr: "Projets" },
 		subtitle: {
-			en: "Three products I built in depth, and a smaller site.",
-			fr: "Trois produits construits en profondeur, et un site plus modeste.",
+			en: "A real-time multiplayer game and a physics simulation, built in depth.",
+			fr: "Un jeu multijoueur temps réel et une simulation physique, construits en profondeur.",
 		},
-		featured: { en: "Featured", fr: "À la une" },
-		more: { en: "Also built", fr: "Autres réalisations" },
 	},
 	caseStudy: {
 		eyebrow: { en: "Project", fr: "Projet" },

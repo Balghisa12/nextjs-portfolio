@@ -1,6 +1,6 @@
 import { Link, matchPath, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { featuredProjects, findProject } from "@/content/projects";
+import { findProject, projects } from "@/content/projects";
 import { profile } from "@/content/profile";
 import { ui } from "@/content/ui";
 import { ContactLinks } from "@/components/contact-links";
@@ -17,14 +17,14 @@ const pageLabels: Record<string, typeof ui.nav.home> = {
 
 /**
  * Bottom "player" bar. No audio is shipped (no licensed track), so it shows what the
- * visitor is looking at, the next featured project, and the contact links.
+ * visitor is looking at, the next project, and the contact links.
  */
 export function NowExploring({ className }: Readonly<{ className?: string }>) {
 	const { t } = useLocale();
 	const { pathname } = useLocation();
 	const project = findProject(matchPath("/projects/:slug", pathname)?.params.slug);
 	const label = project ? project.name : t(pageLabels[pathname] ?? ui.notFound.title);
-	const next = featuredProjects[(featuredProjects.findIndex((p) => p === project) + 1) % featuredProjects.length];
+	const next = projects[(projects.findIndex((p) => p === project) + 1) % projects.length];
 
 	return (
 		<aside

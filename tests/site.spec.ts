@@ -13,9 +13,9 @@ test('a nested route renders on direct load and after a refresh', async ({ page 
 
 test('opening a case study from home moves focus to its heading', async ({ page }) => {
   await page.goto('/')
-  await page.locator('main').getByRole('link', { name: 'PR Walkthrough', exact: true }).click()
-  await expect(page).toHaveURL('/projects/pr-walkthrough')
-  await expect(page.getByRole('heading', { level: 1, name: 'PR Walkthrough' })).toBeFocused()
+  await page.locator('main').getByRole('link', { name: 'Reactor Simulator', exact: true }).click()
+  await expect(page).toHaveURL('/projects/reactor-simulator')
+  await expect(page.getByRole('heading', { level: 1, name: 'Reactor Simulator' })).toBeFocused()
 })
 
 test('the skip link jumps keyboard users to the content', async ({ page }) => {

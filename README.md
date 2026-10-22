@@ -35,7 +35,7 @@ CI (`.github/workflows/ci.yml`) runs lint, build and the Playwright suite on eve
 Content is data, not markup. Edit the files in `src/content/`:
 
 - Every human-readable string is an `L` object (`{ en, fr }`). TypeScript fails the build if a language is missing.
-- **Add a project:** append to `projects` in `src/content/projects.ts`, add its cover (640×640) and screenshots (720 and 1440 px wide) under `src/assets/projects/`. Set `featured: true` to put it on the home page. Empty arrays hide a case-study section.
+- **Add a project:** append to `projects` in `src/content/projects.ts`, add its cover (640×640) and screenshots (720 and 1440 px wide) under `src/assets/projects/`. Every project appears on the home page. Empty arrays hide a case-study section.
 - **Edit a role:** `src/content/experience.ts`. `highlights` are always visible; `more` sits under "More details". Only list technologies the CV names for that role.
 - Before publishing a new claim, add it to `docs/content-ledger.md` with its source.
 
@@ -45,7 +45,7 @@ English and French. English is the default; the visitor's choice is saved in `lo
 
 ## Audio
 
-There is no audio player. The previous site shipped a commercial track with no established distribution rights, so it was removed. The bottom bar shows what the visitor is viewing, the next featured project, and contact links. To bring audio back, use a track you have the right to distribute, load it only after the visitor presses play, and never autoplay.
+There is no audio player. The previous site shipped a commercial track with no established distribution rights, so it was removed. The bottom bar shows what the visitor is viewing, the next project, and contact links. To bring audio back, use a track you have the right to distribute, load it only after the visitor presses play, and never autoplay.
 
 ## Deployment
 

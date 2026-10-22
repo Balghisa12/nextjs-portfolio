@@ -6,82 +6,35 @@
   color-scheme: dark;
 }
 
+html {
+  /* Keep focused and anchored elements clear of the fixed bottom bars. */
+  scroll-padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+}
+
 body {
-  @apply bg-background text-white;
+  @apply bg-canvas text-ink font-sans antialiased;
 }
 
-::-webkit-scrollbar {
-  width: 12px;
+:focus-visible {
+  outline: 2px solid theme('colors.accent');
+  outline-offset: 2px;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+[tabindex='-1']:focus {
+  outline: none;
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-neutral-600 rounded-full border-4 border-transparent bg-clip-padding;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-neutral-500;
-}
-
-@layer utilities {
-  .animate-in {
-    @apply opacity-0;
-  }
-
-  .fade-in {
-    animation: fade-in 0.5s ease-out forwards;
-  }
-
-  .fade-in-50 {
-    animation: fade-in-50 0.5s ease-out forwards;
-  }
-
-  .slide-in-from-bottom-2 {
-    animation: slide-in-from-bottom-2 0.5s ease-out forwards;
-  }
-
-  .slide-in-from-bottom-4 {
-    animation: slide-in-from-bottom-4 0.5s ease-out forwards;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in-50 {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slide-in-from-bottom-2 {
-  from {
-    transform: translateY(0.5rem);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slide-in-from-bottom-4 {
-  from {
-    transform: translateY(1rem);
-  }
-  to {
-    transform: translateY(0);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

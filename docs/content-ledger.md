@@ -57,11 +57,11 @@ The previous site's master's and bachelor's degrees, specialization and club mem
 
 | Project | Claim | Source | State |
 |---|---|---|---|
-| Wikissey | Co-founder / full-stack engineer, 2025 – present; React/TS + Go/Nakama, WebSockets, PostgreSQL, Redis; releases; Discord | CV | Source. Role wording follows the CV only; the split of work with the other co-founder is not described. |
-| Wikissey | Lobbies with party codes, public games, rematches, spectating, up to 8 players, daily challenge, tournaments, leaderboards, EN/FR, guest play, WikiRace and Elimination | Site; README (private) | Source |
-| Wikissey | Server validates every click; Go plugin on Nakama; HTTP RPCs plus WebSockets; Wikipedia dumps in PostgreSQL; live pages cached in Redis | README (private) | Owner. Confirm you are happy describing this architecture publicly. |
+| Wikissey | Co-founder / full-stack engineer, 2025 – present; React/TS + Go/Nakama, WebSockets, PostgreSQL, Redis; releases; Discord | CV | Source. Stack named as on the CV; no architecture description (owner, 22 Oct 2026). |
+| Wikissey | Lobbies with party codes, public games, rematches, spectating, up to 8 players, daily challenge, tournaments, leaderboards, EN/FR, guest play, WikiRace and Elimination | Site | Source |
+| Wikissey | Architecture, server-side validation, data pipeline | README (private) | Held. Not published, by the owner's decision (22 Oct 2026). |
+| Wikissey | Screenshots | none | Held. Logo only; visitors can play at wikissey.com (owner, 22 Oct 2026). |
 | Wikissey | Player counts, retention, latency, uptime, revenue | none | Held |
-| Wikissey | Lobby, race and results screenshots | none | Held. Only logged-out public pages were captured; no account or game was created on production. |
 | Reactor Simulator | Author; MIT | Git; LICENSE; owner kept it | Source |
 | Reactor Simulator | Physics models, layers, deterministic replay, spec/errata rule, scenarios, oracle-based tests | README; repo CLAUDE.md | Source |
 | Reactor Simulator | 907 tests across 41 files passing | Run | Source |

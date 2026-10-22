@@ -6,7 +6,7 @@ export interface Decision {
 	source: { label: string; href: string };
 }
 
-// Home-page highlights. Korint items restate CV bullets; no metrics beyond the CV.
+// Home-page highlights. They restate CV bullets; no metrics beyond the CV.
 export const decisions: Decision[] = [
 	{
 		title: {
@@ -26,13 +26,5 @@ export const decisions: Decision[] = [
 			fr: "Chez Korint, j’ai simplifié une opération de cinq actions à un seul clic.",
 		},
 		source: { label: "Korint", href: "/experience#korint" },
-	},
-	{
-		title: { en: "Races refereed by the server", fr: "Des courses arbitrées par le serveur" },
-		body: {
-			en: "In Wikissey, every click is checked by the server against the links on the player’s current page, so results come only from legal moves.",
-			fr: "Dans Wikissey, chaque clic est vérifié par le serveur par rapport aux liens de la page du joueur : les résultats ne viennent que de coups légaux.",
-		},
-		source: { label: "Wikissey", href: "/projects/wikissey" },
 	},
 ];

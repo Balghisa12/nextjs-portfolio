@@ -1,9 +1,5 @@
 import type { L } from "@/lib/locale";
 import wikisseyCover from "@/assets/projects/wikissey-cover.webp";
-import wikisseyHome720 from "@/assets/projects/wikissey-home-720.webp";
-import wikisseyHome1440 from "@/assets/projects/wikissey-home-1440.webp";
-import wikisseyRules720 from "@/assets/projects/wikissey-rules-720.webp";
-import wikisseyRules1440 from "@/assets/projects/wikissey-rules-1440.webp";
 import reactorCover from "@/assets/projects/reactor-cover.webp";
 import reactorBoard720 from "@/assets/projects/reactor-shift-board-720.webp";
 import reactorBoard1440 from "@/assets/projects/reactor-shift-board-1440.webp";
@@ -80,13 +76,13 @@ export const projects: Project[] = [
 				fr: "Une course Wikipédia part de deux articles : aller de la page de départ à la page cible en ne cliquant que sur les liens des articles.",
 			},
 			{
-				en: "Wikissey turns it into a fair, live competition: every player gets the same start and target, races at the same time, and the server checks every click so nobody can skip ahead.",
-				fr: "Wikissey en fait une compétition en direct et équitable : tous les joueurs ont le même départ et la même cible, courent en même temps, et le serveur vérifie chaque clic pour que personne ne prenne de raccourci.",
+				en: "Wikissey turns it into a live competition: every player gets the same start and target, and everyone races at the same time.",
+				fr: "Wikissey en fait une compétition en direct : tous les joueurs ont le même départ et la même cible, et tout le monde court en même temps.",
 			},
 		],
 		myRole: {
-			en: "Co-founded the game and work on it as a full-stack engineer: development of the React/TypeScript and Go/Nakama architecture (WebSockets, PostgreSQL, Redis), releases, and running the Discord community.",
-			fr: "Cofondateur du jeu et full-stack engineer : développement de l’architecture React/TypeScript et Go/Nakama (WebSockets, PostgreSQL, Redis), mises en ligne et animation du Discord.",
+			en: "Co-founded the game and work on it as a full-stack engineer: building it with React/TypeScript and Go/Nakama (WebSockets, PostgreSQL, Redis), shipping releases, and running the Discord community.",
+			fr: "Cofondateur du jeu et full-stack engineer : développement en React/TypeScript et Go/Nakama (WebSockets, PostgreSQL, Redis), mises en ligne et animation du Discord.",
 		},
 		flow: {
 			heading: { en: "The player journey", fr: "Le parcours joueur" },
@@ -101,8 +97,8 @@ export const projects: Project[] = [
 				{
 					title: { en: "Race", fr: "Course" },
 					body: {
-						en: "Everyone starts on the same article. Each click goes to the server, which checks it against the links on the player’s current page before moving them.",
-						fr: "Tout le monde part du même article. Chaque clic est envoyé au serveur, qui le vérifie par rapport aux liens de la page actuelle du joueur avant de le déplacer.",
+						en: "Everyone starts on the same article and can only follow links inside the articles. First to the target wins.",
+						fr: "Tout le monde part du même article et ne peut suivre que les liens des articles. Le premier arrivé à la cible gagne.",
 					},
 				},
 				{
@@ -121,62 +117,9 @@ export const projects: Project[] = [
 				},
 			],
 		},
-		screens: [
-			shot(
-				wikisseyHome720,
-				wikisseyHome1440,
-				{
-					en: "Wikissey home screen: today’s Odyssey challenge from one Wikipedia article to another, with Create game and Join game buttons.",
-					fr: "Accueil de Wikissey : le défi Odyssey du jour, d’un article Wikipédia à un autre, avec les boutons Créer et Rejoindre une partie.",
-				},
-				{
-					en: "Home screen with the daily Odyssey challenge. Captured logged out from wikissey.com, 22 October 2026.",
-					fr: "Écran d’accueil avec le défi Odyssey du jour. Capturé déconnecté sur wikissey.com, le 22 octobre 2026.",
-				},
-			),
-			shot(
-				wikisseyRules720,
-				wikisseyRules1440,
-				{
-					en: "Wikissey How to Play page explaining the goal and rules, with an example three-click route from Honey to Mount Olympus.",
-					fr: "Page Comment jouer de Wikissey expliquant le but et les règles, avec un exemple de parcours en trois clics de Honey à Mount Olympus.",
-				},
-				{
-					en: "The public rules page, with a real three-click example route.",
-					fr: "La page publique des règles, avec un vrai parcours d’exemple en trois clics.",
-				},
-			),
-		],
-		architecture: [
-			{
-				en: "Frontend: React, TypeScript and Vite. Live match traffic runs over WebSockets; other calls are HTTP RPCs.",
-				fr: "Frontend : React, TypeScript et Vite. Le trafic des parties passe par WebSockets ; les autres appels sont des RPC HTTP.",
-			},
-			{
-				en: "Backend: a Go plugin loaded by the Nakama game server runs the matches, the RPCs and the background tasks.",
-				fr: "Backend : un plugin Go chargé par le serveur de jeu Nakama exécute les parties, les RPC et les tâches de fond.",
-			},
-			{
-				en: "PostgreSQL holds game data and article metadata loaded from monthly Wikipedia dumps; Redis holds background tasks and a cache of the pages fetched during play.",
-				fr: "PostgreSQL stocke les données de jeu et les métadonnées d’articles chargées depuis les dumps mensuels de Wikipédia ; Redis gère les tâches de fond et un cache des pages récupérées pendant les parties.",
-			},
-		],
-		decisions: [
-			{
-				title: { en: "The server is the referee", fr: "Le serveur est l’arbitre" },
-				body: {
-					en: "A race result is only fair if every move was legal. The match handler validates each navigation against the links on the player’s current page before it counts, so positions and points come only from validated moves.",
-					fr: "Un résultat n’est juste que si chaque coup est légal. Le gestionnaire de partie valide chaque navigation par rapport aux liens de la page actuelle du joueur avant de la compter : places et points ne viennent que de coups validés.",
-				},
-			},
-			{
-				title: { en: "Article data offline, pages live", fr: "Données d’articles hors ligne, pages en direct" },
-				body: {
-					en: "Random starts, search and themes need titles, categories and scores for a very large set of articles. That metadata is loaded from monthly Wikipedia dumps into PostgreSQL, while the pages players actually read are fetched live and cached in Redis.",
-					fr: "Les départs aléatoires, la recherche et les thèmes ont besoin des titres, catégories et scores d’un très grand nombre d’articles. Ces métadonnées sont chargées depuis les dumps mensuels de Wikipédia dans PostgreSQL, tandis que les pages réellement lues sont récupérées en direct et mises en cache dans Redis.",
-				},
-			},
-		],
+		screens: [],
+		architecture: [],
+		decisions: [],
 		shipped: [
 			{
 				en: "Live races for up to 8 players, with party codes, public games, rematches and spectating",
@@ -191,12 +134,7 @@ export const projects: Project[] = [
 			{ en: "Guest play without an account", fr: "Jeu en invité, sans compte" },
 		],
 		constraints: [],
-		evidence: [
-			{
-				en: "The game is public at wikissey.com. The source repository is private, so this page describes behaviour rather than linking code.",
-				fr: "Le jeu est public sur wikissey.com. Le dépôt est privé : cette page décrit le fonctionnement sans lien vers le code.",
-			},
-		],
+		evidence: [],
 	},
 	{
 		slug: "reactor-simulator",

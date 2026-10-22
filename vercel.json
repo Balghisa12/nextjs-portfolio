@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/:page(projects|experience|about|contact|skills|education)", "destination": "/index.html" },
+    { "source": "/projects/:slug", "destination": "/index.html" }
+  ]
+}

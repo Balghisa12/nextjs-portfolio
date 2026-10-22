@@ -1,0 +1,108 @@
+// Interface strings. Every leaf must carry both locales (type L).
+export const ui = {
+	nav: {
+		label: { en: "Main", fr: "Principale" },
+		skip: { en: "Skip to content", fr: "Aller au contenu" },
+		home: { en: "Home", fr: "Accueil" },
+		projects: { en: "Projects", fr: "Projets" },
+		experience: { en: "Experience", fr: "Expérience" },
+		about: { en: "About", fr: "À propos" },
+		contact: { en: "Contact", fr: "Contact" },
+		library: { en: "Your library", fr: "Bibliothèque" },
+		projectsNote: { en: "Discography", fr: "Discographie" },
+		experienceNote: { en: "Career", fr: "Parcours" },
+		aboutNote: { en: "Biography", fr: "Biographie" },
+		contactNote: { en: "Email, LinkedIn, CV", fr: "E-mail, LinkedIn, CV" },
+	},
+	language: {
+		label: { en: "Language", fr: "Langue" },
+		en: { en: "English", fr: "English" },
+		fr: { en: "Français", fr: "Français" },
+	},
+	cv: {
+		download: { en: "Download CV", fr: "Télécharger le CV" },
+		format: { en: "PDF, in French", fr: "PDF" },
+	},
+	home: {
+		explore: { en: "Explore my work", fr: "Voir mes projets" },
+		featured: { en: "Featured work", fr: "Projets phares" },
+		decisions: { en: "Selected engineering decisions", fr: "Quelques décisions d’ingénierie" },
+		career: { en: "Career", fr: "Parcours" },
+		fullTimeline: { en: "See the full timeline", fr: "Voir tout le parcours" },
+		about: { en: "About", fr: "À propos" },
+		aboutMore: { en: "More about me", fr: "En savoir plus" },
+		contactTitle: { en: "Let’s talk", fr: "Discutons" },
+		contactBody: {
+			en: "Email is the most direct way to reach me.",
+			fr: "Le plus direct pour me joindre, c’est l’e-mail.",
+		},
+	},
+	projects: {
+		title: { en: "Projects", fr: "Projets" },
+		subtitle: {
+			en: "A real-time multiplayer game and a physics simulation, built in depth.",
+			fr: "Un jeu multijoueur temps réel et une simulation physique, construits en profondeur.",
+		},
+	},
+	caseStudy: {
+		eyebrow: { en: "Project", fr: "Projet" },
+		contents: { en: "In this case study", fr: "Dans cette étude de cas" },
+		problem: { en: "The problem", fr: "Le problème" },
+		role: { en: "My role", fr: "Mon rôle" },
+		screens: { en: "Screens", fr: "Écrans" },
+		architecture: { en: "Architecture", fr: "Architecture" },
+		decisions: { en: "Key decisions", fr: "Décisions clés" },
+		shipped: { en: "What shipped", fr: "Ce qui a été livré" },
+		constraints: { en: "Constraints", fr: "Contraintes" },
+		evidence: { en: "Evidence", fr: "Éléments vérifiables" },
+		next: { en: "Next project", fr: "Projet suivant" },
+		all: { en: "All projects", fr: "Tous les projets" },
+	},
+	experience: {
+		title: { en: "Experience", fr: "Expérience" },
+		roles: { en: "roles", fr: "postes" },
+		since: { en: "since 2022", fr: "depuis 2022" },
+		more: { en: "More details", fr: "Plus de détails" },
+		stack: { en: "Technologies", fr: "Technologies" },
+	},
+	about: {
+		title: { en: "About", fr: "À propos" },
+		approach: { en: "How I work", fr: "Ma façon de travailler" },
+		background: { en: "Background", fr: "Parcours" },
+		backgroundBody: {
+			en: "I studied physics first (Licence, 2019), then engineering at IMT Atlantique (2022), and have built software since: insurtech, IoT, gaming and insurance SaaS. The Reactor Simulator is where the physics comes back.",
+			fr: "J’ai d’abord étudié la physique (licence, 2019), puis l’ingénierie à IMT Atlantique (2022), et je construis du logiciel depuis : insurtech, IoT, gaming et SaaS assurance. Le Reactor Simulator, c’est là que la physique revient.",
+		},
+		education: { en: "Education", fr: "Formation" },
+		languages: { en: "Languages", fr: "Langues" },
+		skills: { en: "Skills, with where to see them", fr: "Compétences, et où les voir" },
+		alsoOnCv: { en: "Also on my CV", fr: "Aussi sur mon CV" },
+	},
+	contact: {
+		title: { en: "Contact", fr: "Contact" },
+		body: {
+			en: "Email is the most direct way to reach me. I’m based in Paris.",
+			fr: "Le plus direct pour me joindre, c’est l’e-mail. Je suis basé à Paris.",
+		},
+		email: { en: "Email me", fr: "M’écrire" },
+		copy: { en: "Copy address", fr: "Copier l’adresse" },
+		copied: { en: "Address copied.", fr: "Adresse copiée." },
+		copyFailed: {
+			en: "Couldn’t copy. Select the address instead.",
+			fr: "Copie impossible. Sélectionnez l’adresse à la place.",
+		},
+	},
+	notFound: {
+		title: { en: "Page not found", fr: "Page introuvable" },
+		body: {
+			en: "This page isn’t in the library. It may have moved.",
+			fr: "Cette page n’est pas dans la bibliothèque. Elle a peut-être été déplacée.",
+		},
+		home: { en: "Back to home", fr: "Retour à l’accueil" },
+	},
+	bar: {
+		label: { en: "Now exploring", fr: "Vous explorez" },
+		next: { en: "Up next", fr: "À suivre" },
+	},
+	portraitAlt: { en: "Portrait of Hazim Benslimane", fr: "Portrait de Hazim Benslimane" },
+};

@@ -1,31 +1,33 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Sidebar } from '@/components/sidebar'
-import { Player } from '@/components/player'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { AppShell } from '@/components/app-shell'
+import { LocaleProvider } from '@/components/locale-provider'
 import { HomePage } from '@/pages/home'
-import { SectionPage } from '@/pages/section'
-import { MobileHomeButton } from '@/components/mobile-home-button'
-import { AudioProvider } from '@/contexts/AudioContext'
+import { ProjectsPage } from '@/pages/projects'
+import { ProjectPage } from '@/pages/project'
+import { ExperiencePage } from '@/pages/experience'
+import { AboutPage } from '@/pages/about'
+import { ContactPage } from '@/pages/contact'
+import { NotFoundPage } from '@/pages/not-found'
 
 export default function App() {
   return (
-    <AudioProvider>
-      <Router>
-        <div className="flex flex-col h-screen">
-          <div className="flex flex-1 overflow-hidden">
-            <div className="hidden md:block p-2 bg-black">
-              <Sidebar />
-            </div>
-            <main className="flex-1 overflow-auto relative bg-black">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/:section" element={<SectionPage />} />
-              </Routes>
-              <MobileHomeButton />
-            </main>
-          </div>
-          <Player />
-        </div>
-      </Router>
-    </AudioProvider>
+    <LocaleProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AppShell />}>
+            <Route index element={<HomePage />} />
+            <Route path="projects" element={<ProjectsPage />} />
+            <Route path="projects/:slug" element={<ProjectPage />} />
+            <Route path="experience" element={<ExperiencePage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            {/* Old section URLs from the previous site. */}
+            <Route path="skills" element={<Navigate to="/about#skills" replace />} />
+            <Route path="education" element={<Navigate to="/about#education" replace />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </LocaleProvider>
   )
 }

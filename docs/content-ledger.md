@@ -37,7 +37,7 @@ Every factual claim on the site, where it comes from, and whether the owner has 
 |---|---|---|---|
 | Korint, Software Engineer, insurance SaaS, 2024 – present; six bullets | CV | Source | Three visible, three under "More details" |
 | "Five actions to one click" | CV | Source | Scope kept to "an operation"; no productivity extrapolation |
-| Billing-state redesign: problem → decision → benefit (home page) | CV | Owner | The explanatory framing ("must not be applied twice") is editorial; the CV gives no metric |
+| Home "What I do": four areas (interfaces, payments and backends, real-time, automation and AI) | CV | Source | Each card restates CV bullets; the grouping is editorial |
 | Zaack, full-stack developer, IoT SaaS, 2022 – 2024 | CV | Source | |
 | Zaack "15 % precision gain" | CV | Held | Not published, by the owner's decision (22 Oct 2026). Qualitative copy only. |
 | STUF, full-stack developer, gaming SaaS, Jan – May 2023 | CV; owner | Source | A side mission done alongside Zaack (owner, 22 Oct 2026); labelled as such to explain the overlap |
@@ -50,6 +50,14 @@ Every factual claim on the site, where it comes from, and whether the owner has 
 |---|---|---|
 | IMT Atlantique, Diplôme d’ingénieur, 2022 | CV; 2022 graduating-class decree (economie.gouv.fr) | Source |
 | Université de Bourgogne, Licence de physique, 2019 | CV | Source |
+| IMT Atlantique is a grande école of the Institut Mines-Télécom, campuses in Brest, Nantes and Rennes | Public facts about the school | Source |
+| Specialization or courses at IMT Atlantique | none | Held. Needs the owner. |
+
+## Skills
+
+| Claim | Source | State |
+|---|---|---|
+| Home skill groups (Frontend, Backend, Data and cloud, Quality, Also) | CV, "Compétences techniques" | Source |
 
 The previous site's master's and bachelor's degrees, specialization and club memberships were not in any source and have been removed.
 
@@ -59,6 +67,10 @@ The previous site's master's and bachelor's degrees, specialization and club mem
 |---|---|---|---|
 | Wikissey | Co-founder / full-stack engineer, 2025 – present; React/TS + Go/Nakama, WebSockets, PostgreSQL, Redis; releases; Discord | CV | Source. Stack named as on the CV; no architecture description (owner, 22 Oct 2026). |
 | Wikissey | Lobbies with party codes, public games, rematches, spectating, up to 8 players, daily challenge, tournaments, leaderboards, EN/FR, guest play, WikiRace and Elimination | Site | Source |
+| Wikissey | Weekly tournaments ("Wikissey Weekly", Saturdays, up to 64 players), ladder points on an all-time leaderboard worldwide and per region | Site (26 Oct 2026); owner | Source. No player names or counts published. |
+| Wikissey | Daily challenge "Today's Odyssey": same pages for all, 5-minute limit, no account, past challenges with player count and shortest path | Site (26 Oct 2026) | Source |
+| Wikissey | Private games with a 6-character code, 1 to 10 races of 1 to 30 minutes; free to play; mobile | Site (26 Oct 2026) | Source |
+| Wikissey | "No search bar or back button; the server checks every click" | Site (26 Oct 2026) | Source. Product wording only; no architecture. |
 | Wikissey | Architecture, server-side validation, data pipeline | README (private) | Held. Not published, by the owner's decision (22 Oct 2026). |
 | Wikissey | Screenshots | none | Held. Logo only; visitors can play at wikissey.com (owner, 22 Oct 2026). |
 | Wikissey | Player counts, retention, latency, uptime, revenue | none | Held |

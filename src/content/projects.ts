@@ -111,8 +111,8 @@ export const projects: Project[] = [
 				{
 					title: { en: "Beyond one race", fr: "Au-delà d’une course" },
 					body: {
-						en: "A daily challenge, scheduled tournaments played in rounds of small heats with a bracket, and weekly, monthly and all-time leaderboards.",
-						fr: "Un défi quotidien, des tournois planifiés en manches de petites poules avec un tableau, et des classements hebdomadaires, mensuels et historiques.",
+						en: "A daily challenge, weekly tournaments played in rounds of small heats with a bracket, and weekly, monthly and all-time leaderboards.",
+						fr: "Un défi quotidien, des tournois hebdomadaires en manches de petites poules avec un tableau, et des classements hebdomadaires, mensuels et historiques.",
 					},
 				},
 			],
@@ -126,7 +126,7 @@ export const projects: Project[] = [
 				fr: "Courses en direct jusqu’à 8 joueurs, avec codes de salon, parties publiques, revanches et mode spectateur",
 			},
 			{ en: "Two modes: WikiRace and Elimination", fr: "Deux modes : WikiRace et Élimination" },
-			{ en: "A daily challenge and scheduled tournaments", fr: "Un défi quotidien et des tournois planifiés" },
+			{ en: "A daily challenge and weekly tournaments", fr: "Un défi quotidien et des tournois hebdomadaires" },
 			{
 				en: "English and French, for both the interface and the Wikipedia content",
 				fr: "Anglais et français, pour l’interface comme pour le contenu Wikipédia",

@@ -22,7 +22,7 @@ CI (`.github/workflows/ci.yml`) runs lint, build and the Playwright suite on eve
 
 | Path | What it is |
 |------|------------|
-| `src/content/` | All site content, typed: `profile`, `experience`, `projects`, `education`, `skills`, `decisions`, and `ui` (interface strings) |
+| `src/content/` | All site content, typed: `profile`, `experience`, `projects`, `education`, `skills`, `home` (home-page highlights), and `ui` (interface strings) |
 | `src/pages/` | One component per route |
 | `src/components/` | App shell, library sidebar, headers, cards, case-study layout, contact links, language switcher, bottom bar |
 | `src/assets/` | Portrait and project images (WebP) |

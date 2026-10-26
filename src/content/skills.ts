@@ -33,3 +33,29 @@ export const otherSkills: L = {
 	en: "NestJS, SQL, AWS, Docker, Terraform, CI/CD, unit and E2E tests, Supabase, Java/Spring Boot",
 	fr: "NestJS, SQL, AWS, Docker, Terraform, CI/CD, tests unitaires et E2E, Supabase, Java/Spring Boot",
 };
+
+// The CV's "Compétences techniques" block, group by group.
+export const skillGroups: { name: L; items: L[] }[] = [
+	{ name: same("Frontend"), items: ["TypeScript", "JavaScript", "React", "Next.js", "Vite"].map(same) },
+	{
+		name: same("Backend"),
+		items: [...["Node.js", "NestJS", "Go", "Express"].map(same), { en: "REST APIs", fr: "API REST" }, same("WebSockets")],
+	},
+	{
+		name: { en: "Data and cloud", fr: "Données et cloud" },
+		items: ["PostgreSQL", "Redis", "SQL", "AWS", "Docker", "Terraform"].map(same),
+	},
+	{
+		name: { en: "Quality", fr: "Qualité" },
+		items: [
+			{ en: "Unit and E2E tests", fr: "Tests unitaires et E2E" },
+			same("CI/CD"),
+			same("Git"),
+			{ en: "Asynchronous workflows", fr: "Workflows asynchrones" },
+		],
+	},
+	{
+		name: { en: "Also", fr: "Autres" },
+		items: ["Python", "Keras", "Firebase", "Supabase", "Java/Spring Boot"].map(same),
+	},
+];
